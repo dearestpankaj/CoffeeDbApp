@@ -17,8 +17,7 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(categories.keys.sorted(), id: \String.self) { key in
-                    DrinkRow(categoryName: "\(key) Drinks", drinks: self.categories[key]!)
-                        .frame(height: 320)
+                    DrinkRow(categoryName: "\(key) Drinks".uppercased(), drinks: self.categories[key]!)
                         .padding(.top)
                         .padding(.bottom)
                 }
